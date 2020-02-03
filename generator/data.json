@@ -90,13 +90,13 @@
             "img": "qiniu.webp"
         },
         "学术搜索": {
-            "url": "http://scholar.chongbuluo.com/",
+            "url": "https://scholar.chongbuluo.com/",
             "name": "学术搜索",
             "disc": "站在巨人的肩膀上",
             "img": "chong.webp"
         },
         "快搜": {
-            "url": "http://search.chongbuluo.com/",
+            "url": "https://search.chongbuluo.com/",
             "name": "快搜",
             "disc": "搜索快人一步",
             "img": "chong.webp"
@@ -177,7 +177,7 @@
             "img": "appinn.webp"
         },
         "反斗软件": {
-            "url": "http://www.apprcn.com/",
+            "url": "https://www.apprcn.com/",
             "name": "反斗软件",
             "disc": "发现新奇有趣的软件",
             "img": "fandou.webp"
@@ -189,7 +189,7 @@
             "img": "sspai.webp"
         },
         "数字尾巴": {
-            "url": "http://www.dgtle.com",
+            "url": "https://www.dgtle.com",
             "name": "数字尾巴",
             "disc": "分享美好数字生活",
             "img": "dgtle.webp"
@@ -219,13 +219,13 @@
             "img": "free.webp"
         },
         "利器": {
-            "url": "http://liqi.io/",
+            "url": "https://liqi.io/",
             "name": "利器",
             "disc": "创造者和他们的工具",
             "img": "liqi.webp"
         },
         "next": {
-            "url": "http://next.36kr.com/",
+            "url": "https://next.36kr.com/",
             "name": "NEXT",
             "disc": "36氪旗下的产品发现社区",
             "img": "next.webp"
@@ -237,7 +237,7 @@
             "img": "producthunt.webp"
         },
         "最美应用": {
-            "url": "http://zuimeia.com",
+            "url": "https://zuimeia.com",
             "name": "最美应用",
             "disc": "发现好用好看好玩的应用",
             "img": "zuimei.webp"
@@ -289,7 +289,7 @@
             "img": "roczhang.webp"
         },
         "吴川斌的博客": {
-            "url": "http://www.mr-wu.cn/",
+            "url": "https://www.mr-wu.cn/",
             "name": "吴川斌的博客",
             "disc": "专注硬件的创客自媒体",
             "img": "wcb.webp"

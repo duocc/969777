@@ -8,7 +8,7 @@ popd
 #Copy html files to Server
 host='root@tedxiong.com'
 path='/usr/local/nginx/html/nav'
-# scp -r index.html 404.html assets pages ${host}:${path}
+scp -r index.html 404.html assets pages ${host}:${path}
 
 #Push code to github
 time=`date "+%Y-%m-%d_%H-%M-%S"`
