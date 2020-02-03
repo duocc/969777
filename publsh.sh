@@ -14,6 +14,12 @@ path='/usr/local/nginx/html/nav'
 time=`date "+%Y-%m-%d_%H-%M-%S"`
 who=`hostname`
 git add --all
-git commit -m "${who} push @ ${time}"
+echo 'please input commit:'
+read commit
+if [[ ${commit} == ""  ]]; then
+  commit="${who} push @ ${time}"
+fi
+echo ${commit}
+git commit -m "${commit}"
 git push origin master
 echo "Finished Push"
