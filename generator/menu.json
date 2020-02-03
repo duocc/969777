@@ -2,6 +2,9 @@
     "常用推荐": {
         "icon": "linecons-star"
     },
+    "公司内网": {
+        "icon": "linecons-mail"
+    },
     "搜索引擎": {
         "icon": "linecons-search"
     },

@@ -1,4 +1,9 @@
-###
+## Read Me
+
+我个人的网址导航主页，目的在于收集一些我认为比较好的资源网址，部署在 [熊知道](https://nav.tedxiong.com)
+
+## Fork From [rhinoc/Index](https://github.com/rhinoc/Index)
+
 
 这个项目是为了做一个适合自己的首页，加入了哈尔滨工业大学（深圳）的常用网站，所以也可以作为类似[北邮人导航](byr.wiki)的哈工深版。
 
