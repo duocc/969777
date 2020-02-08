@@ -1,8 +1,6 @@
 #! python3
 import os, json
 
-# def header():
-
 def genItem(dict):
     url = dict['url']
     img = dict['img']
@@ -33,8 +31,9 @@ def genItem(dict):
         html += str(i) + '\n'
     return html
 
-def genMenu(menu):
+def genMainPageMenu(menu):
     line = []
+    line.append('\n\n\t\t\t\t<ul id="main-menu" class="main-menu">')
     for title in menu:
         line.append('\t\t\t\t\t<li>')
         if 'item' in menu[title]:
@@ -59,8 +58,9 @@ def genMenu(menu):
         part += str(i) + '\n'
     return part
 
-def genMenua(menu):
+def genAboutPageMenu(menu):
     line = []
+    line.append('\n\n\t\t\t\t<ul id="main-menu" class="main-menu">')
     for title in menu:
         line.append('\t\t\t\t\t<li>')
         if 'item' in menu[title]:
@@ -91,33 +91,37 @@ dataText = json.load(dataJson)
 menuJson = open('menu.json', 'r', encoding='utf-8')
 menuText = json.load(menuJson)
 
-# load header, mid, footer
-iheaderFile = open('iheader.html','r')
-aheaderFile = open('aheader.html','r')
-iheader = iheaderFile.read()
-aheader = aheaderFile.read()
-midFile = open('mid.html','r')
-footerFile = open('footer.html','r')
-feeterFile = open('feeter.html','r')
+# load header
+indexHeaderFile = open('index_header.html','r')
+aboutHeaderFile = open('about_header.html','r')
+indexHeader = indexHeaderFile.read()
+aboutHeader = aboutHeaderFile.read()
 
-#
+# load mid
+midFile = open('mid.html','r')
+
+# load footer
+indexFooterFile = open('index_footer.html','r')
+aboutFooterFile = open('about_footer.html','r')
+
+# 
 indexFile = open('../index.html','w')
-indexFile.write(iheader)
+indexFile.write(indexHeader)
 aboutFile = open('../pages/about.html','w')
-aboutFile.write(aheader)
+aboutFile.write(aboutHeader)
 
 
 # generate Menu
-indexFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
-aboutFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
-indexFile.write(genMenu(menuText))
-aboutFile.write(genMenua(menuText))
-aboutFile.write(feeterFile.read())
+# indexFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
+# aboutFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
+indexFile.write(genMainPageMenu(menuText))
+aboutFile.write(genAboutPageMenu(menuText))
+
 
 # add mid
 indexFile.write(midFile.read())
 
-# generate Item
+# generate Item in index
 for id in dataText:
     count = 0
     indexFile.write('<!-- ' + id + ' -->' + '\n')
@@ -137,14 +141,17 @@ for id in dataText:
     indexFile.write('<!-- END ' + id + ' -->' + '\n')
 
 # add footer
-indexFile.write(footerFile.read())
+indexFile.write(indexFooterFile.read())
+aboutFile.write(aboutFooterFile.read())
 
-#
+# close all file
 indexFile.close()
+indexFooterFile.close()
+indexHeaderFile.close()
+
 aboutFile.close()
-footerFile.close()
-feeterFile.close()
-iheaderFile.close()
-aheaderFile.close()
+aboutFooterFile.close()
+aboutHeaderFile.close()
+
 midFile.close()
 dataJson.close()
