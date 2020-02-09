@@ -1,0 +1,34 @@
+{
+    
+    "优秀文章": {
+        "icon": "linecons-thumbs-up"
+    },
+    "站长工具": {
+        "icon": "linecons-desktop",
+        "item": {
+            "发现产品": "",
+            "应用商城": ""
+        }
+    },
+    "开发相关": {
+        "icon": "linecons-desktop",
+        "item": {
+            "发现产品": "",
+            "应用商城": ""
+        }
+    },
+    "设计相关": {
+        "icon": "linecons-desktop",
+        "item": {
+            "发现产品": "",
+            "应用商城": ""
+        }
+    },
+    "参考手册": {
+        "icon": "linecons-desktop",
+        "item": {
+            "发现产品": "",
+            "应用商城": ""
+        }
+    }
+}

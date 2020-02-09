@@ -86,10 +86,10 @@ def genAboutPageMenu(menu):
     return part
 
 # load json file
-dataJson = open('data.json', 'r', encoding='utf-8')
-dataText = json.load(dataJson)
-menuJson = open('menu.json', 'r', encoding='utf-8')
-menuText = json.load(menuJson)
+indexDataJsonFile = open('index_data.json', 'r', encoding='utf-8')
+indexDataJson = json.load(indexDataJsonFile)
+indexMenuJsonFile = open('index_menu.json', 'r', encoding='utf-8')
+indexMenuJson = json.load(indexMenuJsonFile)
 
 # load header
 indexHeaderFile = open('index_header.html','r')
@@ -98,7 +98,7 @@ indexHeader = indexHeaderFile.read()
 aboutHeader = aboutHeaderFile.read()
 
 # load mid
-midFile = open('mid.html','r')
+indexMidFile = open('index_mid.html','r')
 
 # load footer
 indexFooterFile = open('index_footer.html','r')
@@ -114,20 +114,20 @@ aboutFile.write(aboutHeader)
 # generate Menu
 # indexFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
 # aboutFile.write('\t\t\t\t<ul id="main-menu" class="main-menu">\n')
-indexFile.write(genMainPageMenu(menuText))
-aboutFile.write(genAboutPageMenu(menuText))
+indexFile.write(genMainPageMenu(indexMenuJson))
+aboutFile.write(genAboutPageMenu(indexMenuJson))
 
 
 # add mid
-indexFile.write(midFile.read())
+indexFile.write(indexMidFile.read())
 
 # generate Item in index
-for id in dataText:
+for id in indexDataJson:
     count = 0
     indexFile.write('<!-- ' + id + ' -->' + '\n')
     indexFile.write('<h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="' + id + '"></i>' + id + '</h4>\n')
     indexFile.write('<div class="row" id="content">\n')
-    items = dataText[id]
+    items = indexDataJson[id]
     for item in items:
         temp = items[item]
         part = genItem(temp)
@@ -146,6 +146,7 @@ aboutFile.write(aboutFooterFile.read())
 
 # close all file
 indexFile.close()
+indexMidFile.close()
 indexFooterFile.close()
 indexHeaderFile.close()
 
@@ -153,5 +154,4 @@ aboutFile.close()
 aboutFooterFile.close()
 aboutHeaderFile.close()
 
-midFile.close()
-dataJson.close()
+indexDataJsonFile.close()

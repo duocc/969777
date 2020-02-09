@@ -102,6 +102,20 @@
             "img": "chong.webp"
         }
     },
+    "公司内网": {
+        "工时管理平台": {
+            "url": "http://wms.ingeek.com:8888/login",
+            "name": "工时管理平台",
+            "disc": "项目工时统计",
+            "img": "default.webp"
+        },
+        "confluence": {
+            "url": "https://confluence.ingeek.com/",
+            "name": "Confluence",
+            "disc": "文档管理中心",
+            "img": "default.webp"
+        }
+    },
     "搜索引擎": {
         "google": {
             "url": "https://www.google.com/",
