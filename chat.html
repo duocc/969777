@@ -1,3 +1,12 @@
+<style>
+  /* 
+    这行代码会找到那个“由 Chatwoot 支持”的链接并将其隐藏。
+    !important 是为了确保我们的样式能覆盖掉Chatwoot自己的样式。
+  */
+  a.cw-powered-by {
+    display: none !important;
+  }
+</style>
 <script>
   // Chatwoot 基础视觉设置 (这部分保持不变)
   window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"联系我们"};
