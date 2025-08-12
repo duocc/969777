@@ -1,0 +1,53 @@
+<script>
+  // Chatwoot 基础视觉设置 (这部分保持不变)
+  window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"联系我们"};
+
+  (function(d,t) {
+    var BASE_URL="https://livechat.hainanairlines.com";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+
+    // 当SDK脚本加载完成后执行
+    g.onload=function(){
+      // 初始化 Chatwoot SDK (这部分保持不变)
+      window.chatwootSDK.run({
+        websiteToken: 'ewEk9e31XbVjtnYGjhFsbPvz',
+        baseUrl: BASE_URL
+      });
+
+      // --- 新增的核心逻辑从这里开始 ---
+
+      // 监听 'chatwoot:ready' 事件，确保SDK完全准备就绪
+      window.addEventListener('chatwoot:ready', function () {
+        // 1. 定义一个在浏览器本地存储中使用的键名
+        const storageKey = 'chatwoot_anonymous_user_id';
+        
+        // 2. 尝试从本地存储 (localStorage) 中获取已保存的用户ID
+        let userId = localStorage.getItem(storageKey);
+
+        // 3. 如果本地没有ID (说明是新访客或缓存被清除)
+        if (!userId) {
+          // 使用浏览器内置的 crypto API 生成一个标准的、唯一的 UUID
+          // crypto.randomUUID() 是生成UUID最现代、最推荐的方法
+          userId = crypto.randomUUID();
+          
+          // 将新生成的ID存入本地存储，以便下次访问时使用
+          localStorage.setItem(storageKey, userId);
+        }
+
+        // 4. 使用这个唯一ID来设置用户信息
+        // 第一个参数是用户的唯一标识符，Chatwoot会用它来关联历史记录
+        // 第二个参数是用户对象，我们在这里设置一个易于识别的名称
+        window.$chatwoot.setUser(userId, {
+          name: '访客 ' + userId.substring(0, 8), // 截取UUID前8位作为显示名称，更简洁
+          // 您也可以为匿名用户设置一个虚构的邮箱来更好地在系统中管理
+          // email: `visitor-${userId}@your-domain.com` 
+        });
+      });
+      // --- 新增逻辑结束 ---
+    }
+  })(document,"script");
+</script>
