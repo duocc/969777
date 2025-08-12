@@ -1,12 +1,4 @@
-<style>
-  /* 
-    这行代码会找到那个“由 Chatwoot 支持”的链接并将其隐藏。
-    !important 是为了确保我们的样式能覆盖掉Chatwoot自己的样式。
-  */
-  a[href*="utm_source=widget_branding"] {
-    display: none !important;
-  }
-</style>
+
 <script>
   // Chatwoot 基础视觉设置 (这部分保持不变)
   window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"联系我们"};
@@ -55,6 +47,8 @@
           // 您也可以为匿名用户设置一个虚构的邮箱来更好地在系统中管理
           // email: `visitor-${userId}@your-domain.com` 
         });
+         // --- 3. 自动打开聊天窗口 ---
+        window.$chatwoot.toggle('open');
       });
       // --- 新增逻辑结束 ---
     }
