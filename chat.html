@@ -3,7 +3,7 @@
     这行代码会找到那个“由 Chatwoot 支持”的链接并将其隐藏。
     !important 是为了确保我们的样式能覆盖掉Chatwoot自己的样式。
   */
-  a.cw-powered-by {
+  a[href*="utm_source=widget_branding"] {
     display: none !important;
   }
 </style>
